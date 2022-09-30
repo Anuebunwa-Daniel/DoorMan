@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Man</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <!-- <link rel="stylesheet" href="style.css">
+     -->
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+    
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="doorMan">
+        <div class="container-fluid">
+            <h1>Welcome to Door Man </h1>
+            <p>
+                your best online delivery services
+            </p>
+
+            <form class="form-horinzontal">
+
+                <label for="from"><i class=" fa fa-dot-circle-o"></i></label>
+                <input type="text" id="from" placeholder="origin">
+
+                <br>
+
+
+                <label for="to"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
+                <input type="text" id="to" placeholder="destination">
+
+                <br>
+                <input type="button" id="btn" onClick="get_location();" value="LOCATE">
+            </form>
+        </div>
+
+        
+
+
+        <div id="output">
+
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid" id='map'>
+    
+    </div>
+
+
+
+
+
+
+
+    <!-- <script src="app.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKJ9QfsPzsdVG4L0cygz1ylqGmVuBrYtk&callback=initMap"></script>
+    <script type="text/javascript" charset="utf-8">
+        var directionsDisplay;
+        var directionsService;
+        function initMap(successCallback, errorCallback) {
+
+            var options = {
+                center: {
+                    lat: 4.8472,
+                    lng: 6.9746
+                },
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            //map
+            map = new google.maps.Map(document.getElementById("map"), options)
+
+            //listen for click on map location
+            //   google.maps.event.addListener(map, "click", (event)=>{
+            //     //add marker
+            //     marker({location:event.latlng})
+            //   })
+
+            //creating the marker
+            const marker = new google.maps.Marker({
+                position: {
+                    lat: 4.8472, lng: 6.9746
+                },
+                map: map,
+                animation: google.maps.Animation.Drop,
+                draggable: true,
+                icon: "marker.jpg"
+            });
+            //infowindow
+            const detailWindow = new google.maps.InfoWindow({
+                content: "your current posistion"
+            })
+            marker.addListener("mouseover", ()=> {
+                detailWindow.open(map, marker)
+            })
+            //   var line = new google.maps.Polyline()
+
+
+            directionsService = new google.maps.DirectionsService();
+            var polylineOptionsActual = new google.maps.Polyline({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.6,
+                strokeWeight: 2
+            });
+            directionsDisplay = new google.maps.DirectionsRenderer({ polylineOptions: polylineOptionsActual });
+
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('panel'));
+
+            //  var from= document.querySelector('from').value;
+            //  var to = document.querySelector('to').value;
+            //  console.log(from)
+            //  console.log(to)
+            
+
+        }
+        function get_location() {
+                var start = document.getElementById("from").value;
+                var end = document.getElementById('to').value;
+                var request = {
+                    origin:start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+
+
+
+
+
+        const successCallback = (position) => {
+            console.log(position);
+        };
+
+        const errorCallback = (error) => {
+            console.log(error);
+        };
+
+        navigator.geolocation.getCurrentPosition(successCallback,
+            errorCallback);
+
+            $(window).load(initMap);
+    </script>
+</body>
+</html>

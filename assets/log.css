@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box; 
+}
+ .wrapper{
+            box-shadow: 0 0 20px 0 black;
+            height: 550px;
+        } 
+.container{
+
+}
+.login_form{
+    text-align: center;
+    /* border: 1px solid black; */
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+    background-color:white;
+    
+}
+h2{
+    color: brown;
+}
+p{
+    color:gray;
+}
+#password{
+    width: 300px;
+    height: 30px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: beige;
+    border: 0px;
+    /* border-bottom: 1px; */
+
+}
+button{
+    height: 25px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   
+    
+
+}
+.logo{
+    /* border: 1px solid; */
+    margin-top: 20px;
+}
+img{
+    height: 200px;
+    width: 497px;
+    margin-top: 0px;
+}
+#forget{
+    text-decoration: none;
+    margin-left: 40px;
+    color:black;
+}
+#forget:hover{
+    color: gray;
+}
+
+.terms{
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+@media screen and (min-width:700px){
+      .wrapper{
+            box-shadow: 0 0 20px 0 black;
+            height: 500px;
+            width: 1200px;
+            margin-left: 100px;
+        } 
+    img{
+        margin-left:100px;
+        margin-top:40px;
+        height:400Px;
+
+    }
+    .login_form{
+        margin-left: 600px;
+        margin-top: -400px;
+        background-color: white;
+        width: 500px;
+        /* border: 1px solid brown; */
+    }
+    h2{
+        color: brown;
+
+    }
+    p{
+        margin-left: 30px;
+        color:gray;
+    }
+    #terms{
+        margin-left: 600px;
+    }
+}

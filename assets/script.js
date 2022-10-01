@@ -1,11 +1,6 @@
 // var api_key = "AIzaSyBKJ9QfsPzsdVG4L0cygz1ylqGmVuBrYtk"
 
-var latlng ={
-  lat:position.coords.latitude, 
-  lng:position.coords.longitude
-}
-console.log(position.coords.latitude)
-console.log(position.coords.longitude)
+
 const successCallback = (position) => {
   let latlng ={
     lat:position.coords.latitude, 
@@ -24,13 +19,11 @@ const successCallback = (position) => {
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 
-
   function initMap(successCallback, errorCallback) {
     
-    
     var options ={
-         center: latlng,
-         zoom: 20,
+         center: {lat:4.8338397, lng:7.0576921},
+         zoom: 18,
          mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     //map

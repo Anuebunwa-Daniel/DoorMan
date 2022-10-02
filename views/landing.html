@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="icon" href="../assets/DoorMan-logo.jpg">
+    <link rel="stylesheet" href="../assets/land.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img  class="logo" src="../assets/DoorMan-logo.jpg">Door Man</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              
+              
+              <div class="dropdown">
+              <button class="dropbtn" onclick="myFunction()">Order Food
+                <i class="fa-solid fa-circle-chevron-down"></i>
+              </button>
+              <div class="dropdown-content" id="myDropdown">
+                <a href="#">Chicken Republic</a>
+                <a href="#"> KIlimanjaro</a>
+                <a href="#">Genesis</a>
+                <a href="#">Big Daddy</a>
+              </div>
+            </div>
+
+
+              <!-- <select name="Resturants" id="resturants">
+                <option value="options">Resturants</option>
+                <option value="chicken republic"> Chicken Republic</option>
+                <option value="kilimanjaro"> KIlimanjaro</option>
+                <option value="Genesis">Genesis</option>
+                <option value="bigdaddy">Big Daddy</option>
+              </select> -->
+              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="#">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+      <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+        </script>
+</body>
+</html>

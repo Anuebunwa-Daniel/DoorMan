@@ -1,0 +1,87 @@
+.container-fluid{
+    background-color: brown ;
+}
+
+.navbar-brand{
+    color:white !important;
+    font-size: 30px !important;
+    font-family:'Lucida Sans';
+    font-weight: bold;
+    
+}
+.logo{
+    height: 70px;
+    margin-right: 10px;
+}
+
+.navbar-toggler-icon{
+    background-color: white !important;
+    
+}
+
+.navbar-nav, a{
+color: white !important;
+
+}
+.navbar-nav, a:hover, .dropbtn:hover{
+    color:gray !important;
+}
+
+
+/* select{
+    background-color: beige;
+    border-radius: 5px;
+    color: black;
+
+} */
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+.dropbtn{
+    cursor: pointer;
+    font-size: 15px;  
+    outline: none;
+    color: white;
+    background-color: brown;
+    
+    text-align: left;
+    border: none;
+    margin-left:-2px;
+    margin-top: 0px;
+    width: 120px;
+    /* height: 30px; */
+  }
+  i{
+    margin-left: 5px;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height: 10px;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+
+  .show {
+    display: block;
+  }

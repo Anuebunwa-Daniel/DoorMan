@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registation Page</title>
-    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="/assets/css/reg.css">
 
     <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
 
@@ -25,7 +25,7 @@
     <div id="container" class="animate__fadeInTopLeft">
        
         <div class="header">
-        <img src="DoorMan-logo.jpg" class="img">
+        <img src="../assets/img/DoorMan-logo.jpg" class="img">
         <h1 class="animate__fadeInDown">Door Man</h1>
     </div> 
     <br>
@@ -37,35 +37,45 @@
         <br><P>(customer's registration)</P>
     </h1>
 
-    <form action="" method="" class="animate__flipOutX" id="form">
+    <form  method="post" action="/registration" id="form">
+
         <label for="First Name"><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="first" placeholder="First Name">
+
+        <input type="text" id="first" name="firstname" placeholder="First Name" required >
         <br>
 
         <label for="Last Name"><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="last" placeholder="Last Name">
+        <input type="text" id="last" placeholder="Last Name" name="lastname" required>
+        <br>
+
+        <label for="phone number"><i class="fa-solid fa-file-signature"></i></label>
+        <input type="text" id="last" placeholder="Phone Number" name="Number" required>
         <br>
 
         <label for="Email"><i class="fa-solid fa-envelope"></i></label>
-        <input type="email" id="email" placeholder="Enter your Email">
+        <input type="email" id="email" placeholder="Enter your Email" name="email" required>
 
         <br>
         <label for="password"><i class="fa-solid fa-lock"></i></label>
-        <input type="password" id="password" placeholder=" Password">
+        <input type="password" id="password" placeholder=" Password" name="password"  onkeyup="pass()" required>
+        <p id="passLength"></p>
         <br>
 
         <label for="confirm"><i class="fa-solid fa-lock"></i></label>
-        <input type="password" id="confimr" placeholder=" Comfirm Password">
+        <input type="password" onkeyup="check()" id="confirm" placeholder=" Comfirm Password" name="conpassword" required>
+
+        <p id="message"></p>
 
         <br>
 
         <label for="country"><i class="fa-solid fa-earth-africa"></i></label>
         <select name="country" id="country">
             <option value="options">Choose your Country</option>
-            <option value="Nigeria"> Nigeria</option>
+            <option value="Nigeria" name="nigeria"> Nigeria</option>
 
 
-            <input type="submit" value="Submit" id="submit">
+            <input   type="submit" value="Submit" id="submit" disabled>
+            
             
         </select>
     </form>
@@ -73,5 +83,12 @@
 
     </div>
 </div>
+<script src="../assets/script/regconfig.js"></script>
+<script>
+    
+
+
+</script>
+
 </body>
 </html>

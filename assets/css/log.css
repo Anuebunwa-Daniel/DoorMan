@@ -50,7 +50,7 @@ button{
 }
 img{
     height: 200px;
-    width: 423px;
+    width: 370px;
     margin-top: 0px;
 }
 #forget{
@@ -64,26 +64,26 @@ img{
 
 .terms{
     margin-top: 10px;
-    margin-left: 70px;
+    margin-left: 30px;
 }
 
 @media screen and (min-width:700px){
       .wrapper{
             box-shadow: 0 0 20px 0 black;
             height: 500px;
-            width: 1100px;
-            margin-left: 100px;
+            width: 1000px;
+            margin-left: 50px;
         } 
     img{
-        margin-left:100px;
+        margin-left:70px;
         margin-top:40px;
         height:400Px;
 
     }
     .login_form{
-        margin-left: 600px;
+        margin-left: 493px;
         margin-top: -400px;
-        background-color: white;
+        background-color:white;
         width: 500px;
         /* border: 1px solid brown; */
     }
@@ -96,6 +96,6 @@ img{
         color:gray;
     }
     #terms{
-        margin-left: 600px;
+        margin-left: 500px;
     }
 }

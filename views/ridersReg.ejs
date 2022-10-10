@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rider registration Page</title>
-    <link rel="stylesheet" href="rider.css">
+    <link rel="stylesheet" href="assets/rider.css">
 
     <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
 
@@ -25,7 +25,7 @@
     <div id="container" >
        
         <div class="header">
-        <img src="DoorMan-logo.jpg" class="img">
+        <img src="assets/DoorMan-logo.jpg" class="img">
         <h1 class="animate__fadeInDown">Door Man</h1>
     </div> 
     <br>
@@ -37,32 +37,36 @@
         <br><P>(Rider's registration)</P>
     </h1>
 
-    <form action="" method=""  id="form">
+    <form   method="post" action="/ridersReg"  id="form">
         <label for="First Name"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="first" placeholder=" Rider's First Name">
+        <input type="text" id="first" placeholder=" Rider's First Name" name="firstName" required>
         <br>
 
         <label for="Last Name"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="last" placeholder="Rider's Last Name">
+        <input type="text" id="last" placeholder="Rider's Last Name" name="lastName" required>
+        <br>
+
+        <label for="Phone number"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
+        <input type="text" id="last" placeholder="Rider's Phone Number" name="Number" required>
         <br>
 
         <label for="Email"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-envelope"></i></label>
-        <input type="email" id="email" placeholder="Enter your Email">
+        <input type="email" id="email" placeholder="Enter your Email" name="email" required>
 
         <br>
         <label for="password"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-lock"></i></label>
-        <input type="password" id="password" placeholder=" Password">
+        <input type="password" id="password" placeholder=" Password" name="password" required>
         <br>
 
         <label for="confirm"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-lock"></i></label>
-        <input type="password" id="confimr" placeholder=" Comfirm Password">
+        <input type="password" id="confimr" placeholder=" Comfirm Password" name="conpassword" required>
 
         <br>
 
         <label for="country"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-earth-africa"></i></label>
         <select name="country" id="country">
             <option value="options">Choose your Country</option>
-            <option value="Nigeria"> Nigeria</option>
+            <option value="Nigeria" name="Nigeria" required> Nigeria</option>
         </select>
         <br>
             

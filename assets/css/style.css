@@ -1,0 +1,73 @@
+body{
+    color: purple;
+    font-family: 'poppins';
+    margin: 30px;
+
+}
+.doorMan{
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+}
+.doorMan h1{
+    font-size: 2em;
+    font-weight: bold;
+}
+.doorMan h1,
+.doorMan p{
+    text-align: center;
+
+}
+.doorMan p{
+    font-size: 1.5em;
+}
+#map{
+    width: 100%;
+    height: 250px;
+    /* border: 1px solid black; */
+    margin: 20px  0px;
+}
+#output{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'toboto';
+    height: auto;
+    text-align: center;
+    
+    /* border: 1px solid black; */
+}
+
+i{
+    margin-left: 20px; 
+}
+#to{
+    width: 150px;
+    /* margin-left: 20px; */
+}
+#from{
+    width: 150px;   
+}
+#btn{
+    display: block;
+    margin:0 auto;
+    background-color: brown;
+    color:white;
+    border-radius: 5px;
+    margin-top: 5px;
+
+}
+
+.sidebar-wrapper{
+    background-color: brown !important;
+}
+.logo{
+    
+    margin-bottom: 30px !important;
+    text-align: center !important;
+}
+#lo{
+    font-size: 30px !important;
+    font-weight: bold !important;
+}

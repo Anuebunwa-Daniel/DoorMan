@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Bike registration Page</title>
-    <link rel="stylesheet" href="../assets/bike.css">
+    <link rel="stylesheet" href="../assets/css/bike.css">
 
     <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
 
@@ -25,7 +25,7 @@
     <div id="container" >
        
         <div class="header">
-        <img src="../assets/DoorMan-logo.jpg" class="img">
+        <img src="../assets/img/DoorMan-logo.jpg" class="img">
         <h1 class="animate__fadeInDown">Door Man</h1>
     </div> 
     <br>
@@ -37,50 +37,46 @@
         <br><P>(Bike  registration)</P>
     </h1>
 
-    <form action="" method=""  id="form">
+    <form action="bike" method="post"  id="form" enctype="multipart/form-data">
         <label for="Onwer"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="onwer" placeholder="Owner's Name" required>
+        <input type="text" id="onwer" placeholder="Owner's Name" name="Owner"required>
         <br>
 
         <label for="Make"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="make" placeholder="Bike Make" required>
+        <input type="text" id="make" placeholder="Bike Make" name="make"required>
         <br>
 
         <label for="Registration Number"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="reg" placeholder="registration Number" required>
+        <input type="text" id="reg" placeholder="registration Number"name="regNumber" required>
         <br>
 
         <label for="Engine Number"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-envelope"></i></label>
-        <input type="text" id="engine" placeholder="Engine Number" required>
+        <input type="text" id="engine" placeholder="Engine Number" name="engNumber" required>
 
         <br>
         <label for="password"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-lock"></i></label>
-        <input type="text" id="chasis" placeholder="Chasis Number" required>
+        <input type="text" id="chasis" placeholder="Chasis Number" name ="chasis" required>
         <br>
 
         <label for="confirm"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-lock"></i></label>
-        <input type="text" id="color" placeholder="Vehicle color" required>
+        <input type="text" id="color" placeholder="Vehicle color" name="color"required>
 
         <br>
 
-        <label for="country"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-earth-africa"></i></label>
-        <select name="country" id="country" required>
-            <option value="options">Choose your Country</option>
-            <option value="Nigeria" > Nigeria</option>
-        </select>
+        
 
         <br>
         <br>
         <br>
 
         <label for="reciept name" id="receipt">Receipt of purchase</i></label>
-        <input type="file" required>
+        <input type="file"  name="receipt" required >
         <br>
-        <label for="licence" id="licence">Vehicle Licence</label>
-        <input type="file" required>
+        <!-- <label for="licence" id="licence">Vehicle Licence</label>
+        <input type="file" name="licence" required >
         <br>
-        <label for="licence" id="insurance">Issurance certificate</label>
-        <input type="file" required>
+        <label for="insurance" id="insurance">Issurance certificate</label>
+        <input type="file" name="insurance" required > -->
     
         <br>
         <br>

@@ -71,3 +71,6 @@ i{
     font-size: 30px !important;
     font-weight: bold !important;
 }
+#customer_details{
+    display:none;
+}

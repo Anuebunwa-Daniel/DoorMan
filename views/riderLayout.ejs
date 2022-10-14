@@ -128,7 +128,34 @@
                                         <div id="amount"> 
                         
                                         </div>
+                                    <div id="customer_details">
+                                        <div class="p">
+            <div class="container">
+
+              
+                    <div class="post">
+                    
+                        <%posts.forEach(post=>{%>
+                            <div class="posts">
+                                 <div class="noBold">
+                                  <span>Customer's name: <p><%=post.firstname%>
+                                    <%=post.lastname %></p></span>
+                                    <span>Number: <%=post.Number %> </span>
+                                
+                                
+                            </div>
+                              
+                              </div>
+                              <% })%>
+                            </div>
+        
+                          </div>
+                        </div>
                                     </div>
+                                </div>
+                              
+        
+
                                 
                                     
                                    

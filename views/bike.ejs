@@ -37,9 +37,15 @@
         <br><P>(Bike  registration)</P>
     </h1>
 
+    <div class="container-fluid">
+
     <form action="bike" method="post"  id="form" enctype="multipart/form-data">
+
+        <label for="Phone number"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
+        <input type="text" id="last" placeholder="Rider's Phone Number" name="Number" required>
+        <br>
         <label for="Onwer"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
-        <input type="text" id="onwer" placeholder="Owner's Name" name="Owner"required>
+        <input type="text" id="onwer" placeholder="Owner's Name" name="owner"required>
         <br>
 
         <label for="Make"><i class="fa-solid fa-person-biking"></i><i class="fa-solid fa-file-signature"></i></label>
@@ -62,26 +68,32 @@
         <input type="text" id="color" placeholder="Vehicle color" name="color"required>
 
         <br>
-
-        
-
-        <br>
-        <br>
-        <br>
-
-        <label for="reciept name" id="receipt">Receipt of purchase</i></label>
+        <br> 
+          <label for="reciept name" id="receipt">Receipt of purchase</i></label>
         <input type="file"  name="receipt" required >
-        <br>
-        <!-- <label for="licence" id="licence">Vehicle Licence</label>
-        <input type="file" name="licence" required >
-        <br>
-        <label for="insurance" id="insurance">Issurance certificate</label>
-        <input type="file" name="insurance" required > -->
-    
-        <br>
-        <br>
-        <input type="submit" value="Submit" id="submit">
+        <input type="submit" value="Submit" id="submit"> 
     </form>
+       
+    
+    <br> 
+<form action="/lic" method="post" enctype="multipart/form-data">
+          <label for="licence" id="licence">Vehicle Licence</label>
+        <input type="file" name="licence" required >
+         <br>
+         <input type="submit" value="Upload" id="submit">
+    </form>
+        
+<form action="insu" method="post" enctype="multipart/form-data" >
+        <label for="insurance" id="insurance">Issurance certificate</label>
+        <input type="file" name="insurance" required >
+
+        <!-- <input type="file" name="multi-files" accept='image/*' multiple> -->
+     
+        <br>
+        <br>
+        <input type="submit" value="Upload" id="submit">
+    </form>
+</div>
     
    </div>
 

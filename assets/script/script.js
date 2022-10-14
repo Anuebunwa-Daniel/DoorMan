@@ -1,42 +1,39 @@
 // var api_key = "AIzaSyBKJ9QfsPzsdVG4L0cygz1ylqGmVuBrYtk"
+var coords;
+var successCallback = (position) => {
 
-
-const successCallback = (position) => {
-  let latlng ={
-    lat:position.coords.latitude, 
-    lng:position.coords.longitude
-  }
-  console.log(position.coords.latitude)
-  console.log(position.coords.longitude)
-
-    console.log(position);
-  };
+     var  lat = position.coords.latitude
+      var lng = position.coords.longitude
+     coords = {lat,lng};
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+    }
   
-  const errorCallback = (error) => {
-    console.log(error);
-  };
-  
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+var errorCallback = (error) => {
+      console.log(error);
+    };
+myLoc =navigator.geolocation;
+myLoc.getCurrentPosition(successCallback, errorCallback);
 
 
-  function initMap(successCallback, errorCallback) {
-    
+   
+
+ function initMap(successCallback, errorCallback) {
     var options ={
-         center: {lat:4.8338397, lng:7.0576921},
+         center:coords,
          zoom: 18,
          mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    //map
-  map = new google.maps.Map(document.getElementById("map"),options) 
-
+     //map
+     map = new google.maps.Map(document.getElementById("map"),options)
 
   //creating the marker
   const marker =new google.maps.Marker({
-    position: {lat:4.8338397, lng:7.0576921},
+     position:coords,
     map:map,
     animation:google.maps.Animation.Drop,
     draggable:true,
-    icon:"marker.png"
+    icon:"assets/img/marker.png"
   });
   //infowindow
   const detailWindow = new google.maps.InfoWindow({
@@ -68,10 +65,7 @@ directionsDisplay.setMap(map);
 // const input2 = document.getElementById('to')
 // const autocomplete2 = new google.maps.places.Autocomplete(input2,places)
 
-
-}
-
-
+  }
 
 
 function get_location() {
@@ -106,11 +100,16 @@ function get_location() {
 
       const distance = document.getElementById('distance')
       distance.innerHTML = "Distances: " +  response.routes[0].legs[0].distance.text
+
+      const customerDetails =document.getElementById('customer_details')
+      customerDetails.style.display ="block"
+      
        
       }
   });
 
   
+
 }
 
 

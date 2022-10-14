@@ -12,9 +12,8 @@ const multer = require('multer')
 const upload = require('./utis/multer')
 
 const path = require('path')
-// const alert = require('alert')
 const riderSchema = require('./riderSchema')
-const { receiveMessageOnPort, resourceLimits } = require('worker_threads')
+
 // const {post} = require('./riderSchema')
 
 
@@ -36,8 +35,6 @@ app.set('view engine', 'ejs')
 app.use('/assets', express.static('assets'))
 app.use('/script', express.static('script'))
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }))
-// app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
@@ -67,24 +64,15 @@ app.get('/bike', (req, res)=>{
 app.get('/layout', (req, res)=>{
     res.render('layout')
 })
-
-
-const userDetails = {
-    firstname: '',
-    lastname: '',
-    Number: '',
-    email: '',
-    password: '',
-    conPassword: '',
-    country: ''
-}
-
-
+app.get('/riderLayout', async(req, res)=>{
+const customers_details = await customerSchema.find()
+    res.render('riderLayout', {posts:customers_details})
+})
 
 
 // Registering a new user
 app.post('/registration', async(req,res)=>{
-    console.log(req.body)
+    // console.log(req.body)
     const regInfo = req.body
     const password = regInfo.password
     const firstname = req.body.firstname
@@ -129,7 +117,179 @@ app.post('/registration', async(req,res)=>{
 })
 
 //register a new rider
+app.post('/ridersReg', async(req,res)=>{
+    // console.log(req.body)
+    const regInfo = req.body
+    const password = regInfo.password
+    const firstname = req.body.firstName
+    console.log(req.body.firstname)
+   
+    const salt = await bcrypt.genSalt()
+    const hashedPassword = await bcrypt.hash(password, salt)
+    console.log(req.body)
+    
+    registerRider()
+    async function registerRider(){
+        try{
+            const user = new riderSchema({
+                firstname: regInfo.firstName,
+                lastname: regInfo.lastName,
+                Number: regInfo.Number,
+                email: regInfo.email,
+                password: hashedPassword,
+                conPassword: regInfo.conpassword,
+                country:regInfo.country
+            })
+            await user.save()
+            const payload ={
+                user:{
+                    email:regInfo.email
+                }
+            }
+            const token = await jwt.sign(payload, 'DoorMan',{
+                expiresIn:'3600s'
+            })
+            res.cookie('token', token,{
+                httpOnly: false
+            })
+            res.redirect('/bike')
+        }
+        catch(err){
+            console.log(err)
+            res.redirect('/ridersReg')
+        }
+    }
+})
 
+
+//registering the rider's bike
+// app.post('/bike', upload.array('multi-files', 3), async (req, res, next)=>{
+app.post('/bike', upload.single('receipt'),  async(req, res, next)=>{
+    console.log(req.body)
+
+    const result = await cloudinary.uploader.upload((req. file.path))
+    const bikeInfo = req.body
+    console.log(result)
+   
+    bike()
+    async function bike(){
+
+        try{
+        const bike =new riderSchema({
+             owner: bikeInfo.owner,
+             make: bikeInfo.make,
+             regNumber: bikeInfo.regNumber,
+             engNumber: bikeInfo.engNumber,
+             chasis: bikeInfo.chasis,
+             color: bikeInfo.color,
+             receipt: bikeInfo.receipt,
+            
+        })
+        await riderSchema.findOneAndUpdate(
+            {
+              Number:req.body.Number 
+            },
+            {
+                owner: bikeInfo.owner,
+                make: bikeInfo.make,
+                regNumber: bikeInfo.regNumber,
+                engNumber: bikeInfo.engNumber,
+                chasis: bikeInfo.chasis,
+                color: bikeInfo.color,
+                receipt: result.url,
+                licence: result.url,
+                insurance: result.url
+                
+            }
+        
+
+
+        )
+        res.render('bike')
+        }catch(err){
+            console.log(err)
+            res.render('bike')
+         }
+
+    }
+})
+ 
+
+app.post('/lic', upload.single('licence'),  async(req, res, next)=>{
+    const bikeLic = req.body
+    const result = await cloudinary.uploader.upload((req. file.path))
+    .then(()=>{
+    console.log(result)
+   
+
+    
+    lic()
+    async function lic(){
+
+        try{
+        const bike =new riderSchema({
+             licence: bikeLic.licence
+            
+        })
+        await riderSchema.findOneAndUpdate(
+            {
+              Number:req.body.Number 
+            },
+            {
+                licence: result.url
+                // insurance: result.url
+                
+            }
+        )
+        res.render('bike')
+        }catch(err){
+            console.log(err)
+            res.render('bike')
+         }
+
+    }
+}).catch((err)=>{
+    console.log("lic error" + err)
+})
+})
+
+app.post('/insu', upload.single('insurance'),  async(req, res, next)=>{
+    const bikeInsu = req.body
+    const result = await cloudinary.uploader.upload((req. file.path))
+    .then(()=>{
+        console.log(result)
+       
+    
+        insu()
+        async function insu(){
+    
+            try{
+            const bike =new riderSchema({
+                 insurance: bikeInsu.insurance
+                
+            })
+            await riderSchema.findOneAndUpdate(
+                {
+                  Number:req.body.Number 
+                },
+                {
+                    insurance: result.url
+                    // insurance: result.url
+                    
+                }
+            )
+            res.render('bike')
+            }catch(err){
+                console.log(err)
+                res.render('bike')
+             }
+    
+        }
+   
+    }) .catch((err)=>{
+        console.log(err)
+})
+})
 
 
 

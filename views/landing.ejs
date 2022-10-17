@@ -30,9 +30,6 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-
-              
               <a class="nav-link" href="#">About Us</a>
               <a class="nav-link" href="#">Contact us</a>
             </div>
@@ -43,7 +40,17 @@
       <div class="container">
       <div class="access">
 
-        <a id="log" href="/login" target="">Login</a>
+        <!-- <a id="log" href="/login" target="">Login</a> -->
+        <div class="dropdown">
+          <button class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">
+            Login as:
+          </button>
+          <ul class="dropdown-menu">
+            <li><a id="reg" href="/login" target="">Customer</a></li><br>
+            <li><a id="reg" href="/ridersLogin" target="">Rider</a></li>
+           
+          </ul>
+        </div>
 
         <div class="dropdown">
           <button class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">

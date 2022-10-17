@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+
+    <link rel="stylesheet" href="/assets/css/log.css">
+    
+
+    <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  
+</head>
+<body>
+    <div class="wrapper animated bounceInLeft">
+        <div class="container">
+        <div class="logo">
+            <img src="../assets/img/DoorMan-logo.jpg" alt="">
+        </div>
+    <div class="login_form">
+        <h2>
+            <br>Login as a Rider</h2>
+        <p>You must use the Email use during registration to login your Account</p>
+
+        <form method="post" action="/ridersLogin">
+            <label for="number"><i class="fa-solid fa-phone-volume"></i></label>
+            <input type="tel" id="password" placeholder="phone Number" name="Number">
+
+            <br>
+
+            <label for="password"><i class="fa-solid fa-lock"></i><label>
+            <input type="password" id="password" placeholder="password" name="password">
+            <br>
+                <span>
+            <button type="submit">Login</button>
+
+            <a href="#" id="forget">forgotten your password?</a>
+        </span>
+
+        </form>
+        <br>
+
+   
+    </div>
+
+    <div class="terms">
+    <input type="checkbox" id="terms">
+    <label> I have read and accepted <a href="#">Terms and Conditions</a></label>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

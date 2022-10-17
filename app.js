@@ -19,7 +19,8 @@ const riderSchema = require('./riderSchema')
 
 const app = express()
 
-const mongodb = 'mongodb://localhost:27017/DoorMan'
+const mongodb = "mongodb+srv://delivery:A123456s@door.mlbv9l0.mongodb.net/DoorMan"
+// 'mongodb://localhost:27017/DoorMan'
 
 mongoose.connect (mongodb)
 .then(()=>{
@@ -63,6 +64,9 @@ app.get('/bike', (req, res)=>{
 })
 app.get('/layout', (req, res)=>{
     res.render('layout')
+})
+app.get('/ridersLogin', (req,res)=>{
+    res.render('ridersLogin')
 })
 app.get('/riderLayout', async(req, res)=>{
 const customers_details = await customerSchema.find()
@@ -302,25 +306,21 @@ app.post ('/login',(req,res)=>{
     const password =loginInfo.password
     const firstName =loginInfo.firstName
     console.log(Number)
-    //  const hi= document.querySelector('no-icon').innerHTML
-    //  hi = "hi: " + req.body.firstName
-    //  console.log(hi)
-    
+    console.log(password)
    
-   
-const user = customerSchema.findOne({Number})
-    .then((user)=>{
-        console.log('error m:'+ user)
+const customer = customerSchema.findOne({Number})
+    .then((customer)=>{
+        console.log('error m:'+ customer)
         // console.log("database password: ", user.password)
 
-        bcrypt.compare(password, user.password, (err, data)=>{
-            console.log("database password: ", user.password, user.Number)
+        bcrypt.compare(password, customer.password, (err, data)=>{
+            console.log("database password: ", customer.password, customer.Number)
 
             if(data){
-                 console.log('error m:'+data)
+                 console.log('error t:'+data)
                  const payload ={
                     user:{
-                        number:user.Number
+                        number:customer.Number
                         
                     }
                 }
@@ -348,6 +348,53 @@ const user = customerSchema.findOne({Number})
 
 })
 
+//login a rider
+app.post ('/ridersLogin',(req,res)=>{
+    const loginInfo =req.body
+    const Number = loginInfo.Number
+    const password =loginInfo.password
+    const firstName =loginInfo.firstName
+    console.log(Number)
+    
+   const user = riderSchema.findOne({Number})
+    .then((user)=>{
+        console.log('error m:'+ user)
+        // console.log("database password: ", user.password)
+
+        bcrypt.compare(password, user.password, (err, data)=>{
+            console.log("database password: ", user.password, user.Number)
+
+            if(data){
+                 console.log('error m:'+data)
+                 const payload ={
+                    user:{
+                        number:user.Number
+                        
+                    }
+                }
+                const token = jwt.sign(payload, 'DoorMan', {
+                    expiresIn: '3600s'
+                })
+                res.cookie('token', token, {
+                    httpOnly:true
+                })
+                res.redirect('/riderLayout')
+            }
+            
+            else{
+                console.log('error ty:'+err)
+                res.redirect('/')
+            
+               
+                
+            }
+        })
+    }).catch((err)=>{
+        console.log (err)
+        res.redirect('/')
+    })
+
+})
 
 
 
@@ -355,7 +402,9 @@ const user = customerSchema.findOne({Number})
 
 
 
-const port = 7000
+
+
+const port =process.env.PORT||7000
 app.listen(port, ()=>{
     console.log(`server start at ${port}`)
 })

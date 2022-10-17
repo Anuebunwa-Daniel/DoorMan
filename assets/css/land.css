@@ -100,26 +100,28 @@ span{
   height: 300px;
   /* border: 1px solid black; */
   margin-top: 0px;
-  margin-left: 20px;
+  margin-left: px;
 
 }
 
 
 .footer{
   display: flex;
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-left: -50px;
 }
 
 #about{
-  font-size: 11px;
+  font-size: 10px;
   width: 100px;
-  margin-right: 20px;
+  margin-right: 5px;
   background-color:rgb(131, 125, 125);
   box-shadow: 0px 0px 20px 0px;
 
 }
 #fo{
   text-align: center;
+  margin-left: 0px;
 }
 
 i{
@@ -127,7 +129,7 @@ i{
   text-align: center;
 }
 #than{
-  font-size: 11px;
+  font-size: 10px;
   width: 65px;
   word-wrap: break-word;
   background-color:rgb(131, 125, 125);
@@ -167,7 +169,8 @@ i{
     background-color:rgb(131, 125, 125);
   }
   .footer{
-    margin-left: 20%;
+    margin-left: 70px;
+
 }
 #than{
   font-size: 20px;

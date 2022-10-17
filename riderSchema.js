@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const bcrypt =require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cookieParser =require('cookie-parser')
-const mongodb = 'mongodb://localhost:27017/DoorMan'
+const mongodb = "mongodb+srv://delivery:A123456s@door.mlbv9l0.mongodb.net/DoorMan"
+// 'mongodb://localhost:27017/DoorMan'
 
 mongoose.connect(mongodb)
 

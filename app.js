@@ -19,8 +19,9 @@ const riderSchema = require('./riderSchema')
 
 const app = express()
 
-const mongodb = "mongodb+srv://delivery:A123456s@door.mlbv9l0.mongodb.net/DoorMan"
+const mongodb ="mongodb+srv://delivery:A123456s@door.mlbv9l0.mongodb.net/DoorMan"
 // 'mongodb://localhost:27017/DoorMan'
+// process.env.MONGODB
 
 mongoose.connect (mongodb)
 .then(()=>{

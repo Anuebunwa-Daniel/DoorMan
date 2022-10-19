@@ -18,6 +18,8 @@
 
 .navbar-toggler-icon{
     background-color: white !important;
+    /* margin-right: 45px;
+    width: 40px; */
     
 }
 
@@ -47,9 +49,9 @@ span{
 #log{
   background-color: brown;
   float: right;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 30px;
+   margin-left: 10px; 
+   margin-right: 10px; 
+   width: 30px;
   text-align: center;
   text-decoration: none;
   padding: 5px;
@@ -66,8 +68,20 @@ span{
 
   
 }
-#reg:hover{
+#reg:hover, #log:hover{
   background-color: gray;
+}
+#dropdownL{
+    background-color: wheat;
+    width: 75px;
+    float: right;
+    color: rgb(211, 26, 26) !important;
+    font-size: 12px;
+    margin-right: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 0px;
+    margin-right: 15px !important;
+   
 }
 #dropdown{
   background-color: wheat;
@@ -78,9 +92,12 @@ span{
   margin-right: 5px;
   font-weight: bold;
   box-shadow: 0px 0px 10px 0px;
+  margin-right: 15px !important;
+
 
 }
-#dropdown:hover, #log:hover{
+
+#dropdown:hover, #dropdownL:hover {
   background-color:rgb(201, 200, 200);
   font-size: 11px;
 }
@@ -90,20 +107,22 @@ span{
 .relax{
   font-weight: bold;
   text-align: center;
-  font-family: 'roboto';
+  font-family: 'Georgia';
+  
 }
 
 
 .bg-image{
   margin-top: 30px;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
   
 }
 .bg{
-  height: 300px;
-  margin-top: 0px;
-  margin-left: px;
+  height: 200px;
+  
+  
 
 }
 
@@ -111,15 +130,16 @@ span{
 .footer{
   display: flex;
   margin-top: 0px;
-  margin-left: 5px;
+  margin-left: 0px;
 }
 
 #about{
   font-size: 12px;
-  width: 80px;
-  margin-right: 10px;
-  background-color:rgb(131, 125, 125);
+  width: 70px;
+  margin-right: 20px;
+  background-color:rgb(200, 179, 179);
   box-shadow: 0px 0px 10px 0px;
+  font-family: 'Georgia';
 
 }
 #fo{
@@ -128,18 +148,51 @@ span{
 }
 
 i{
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 }
 #than{
   font-size: 12px;
   width: 70px;
   word-wrap: break-word;
-  background-color:rgb(131, 125, 125);
+  background-color:rgb(200, 179, 179);
   box-shadow: 0px 0px 20px 0px;
+  font-family: Georgia;
+}
+@media screen and (min-width:400px){
+  #dropdown{
+    margin-right: 20px;
+    
+  }
+  .bg-image{
+    margin: 0 auto;
+  }
+  #about{
+    font-family: 'Lucida Sans',  sans-serif;
+    /* margin-right: 30px; */
+    width: 100px;
+    word-wrap: break-word;
+  }
+  .footer{
+    margin-top: 30px;
+    margin:0 auto;
+  }
+  .relax{
+    font-family:'Georgia';
+  }
+  
+  i{
+    font-size: 20px;
+  }
+  #than{
+    display: none;
+  }
+
 }
 
+
 @media screen and (min-width:720px){
+  
   .navbar-nav{
     display: block;
     margin-left: 70%
@@ -147,7 +200,7 @@ i{
   .food{
     font-size: 20px;
     width: 400px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
   .bg-image{
     display: block;
@@ -170,9 +223,11 @@ i{
     width: 200px;
     margin-right: 20px;
     background-color:rgb(131, 125, 125);
+  
   }
   .footer{
     margin-left: 70px;
+    margin-top: 30px;
 
 }
 #than{

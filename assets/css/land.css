@@ -160,78 +160,118 @@ i{
   font-family: Georgia;
 }
 @media screen and (min-width:400px){
+ .container-fluid{
+  background-color: brown;
+ }
   #dropdown{
     margin-right: 20px;
     
   }
   .bg-image{
+  
     margin: 0 auto;
   }
+  .bg{
+    height: 250px;
+  }
   #about{
-    font-family: 'Lucida Sans',  sans-serif;
-    /* margin-right: 30px; */
-    width: 100px;
-    word-wrap: break-word;
+    font-size: 1px;
+    width: 50px;
+    margin-right: 20px;
+    background-color:rgb(200, 179, 179);
+    box-shadow: 0px 0px 10px 0px;
+    font-family: 'Georgia';
+  
   }
   .footer{
     margin-top: 30px;
-    margin:0 auto;
+    margin-left: -50px;
   }
   .relax{
     font-family:'Georgia';
+    margin-top: 50px;
   }
   
   i{
-    font-size: 20px;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
   }
   #than{
-    display: none;
+    font-size: 12px;
+    width: 50px;
+    word-wrap: break-word;
+    background-color:rgb(200, 179, 179);
+    box-shadow: 0px 0px 20px 0px;
+    font-family: Georgia;
   }
 
 }
 
 
 @media screen and (min-width:720px){
+ .container-fluid{
+  background-color: brown;
+
+ }
   
-  .navbar-nav{
+   .navbar-nav{
     display: block;
     margin-left: 70%
   }
   .food{
-    font-size: 20px;
-    width: 400px;
-    /* margin-top: 40px; */
+    font-size: 40px;
+    width: 800px; 
+    margin-top: 100px;
+    font-style: italic;
+    font-weight: bold;
+    
+  }
+ 
+  #dropdownL{
+    margin-right: -50px !important;
   }
   .bg-image{
-    display: block;
-    margin: 0 auto;
-    height: 500px;
-  }
-  .bg{
     height: 400px;
+    width: 400px;
+  margin-left: 30px;
+  }
+  
+  .bg{
+    height: 350px;
+    width: 350px;
+    margin-top: 30px;
+  
+
   }
   .relax{
-    font-size: 30px;
-    width: 400px;
-    margin-top: 40px;
-    display: block;
-    margin:0 auto;
-    
+    font-size: 40px;
+    width: 600px;
+    float: right;
+    margin-top: -300px; 
+ 
+   
   }
   #about{
     font-size: 20px;
     width: 200px;
     margin-right: 20px;
-    background-color:rgb(131, 125, 125);
+    background-color:rgb(200, 179, 179);
+
   
   }
+  i{
+    font-size: 30px;
+    color: brown;
+  }
   .footer{
-    margin-left: 70px;
-    margin-top: 30px;
+   margin-top: 30px;
+   width: auto;
+   justify-content: space-between;
 
 }
 #than{
   font-size: 20px;
-  width: 200px;
+  width: 100px;
 }
 }

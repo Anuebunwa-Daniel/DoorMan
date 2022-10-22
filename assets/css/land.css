@@ -380,8 +380,8 @@ i{
   color: white;
 }
 
-/* view points  from  700px to 1100 px */
-@media screen and (min-width:700px){
+/* view points  from  900px to 1100 px */
+@media screen and (min-width:1000px){
  .container-fluid{
   /* background-color: brown; */
  }
@@ -486,7 +486,7 @@ i{
 
 
 /* view point from 1100px to larger screens */
-@media screen and (min-width:1100px){
+/* @media screen and (min-width:1100px){
  .container-fluid{
   background-color: brown;
 
@@ -552,4 +552,4 @@ i{
   font-size: 20px;
   width: 100px;
 }
-}
+} */

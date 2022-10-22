@@ -124,12 +124,14 @@ h2{
 #us{
   display: flex;
   font-family:'Geneva';
+  overflow: auto;
+  white-space:nowrap;
   
   color:rgb(152, 5, 5);
   font-weight: bold;
   font-size: 20px;
-  overflow: auto;
-  white-space:nowrap;
+  /* overflow: auto;
+  white-space:nowrap; */
 }
 #book{
   margin-right: 40px !important;

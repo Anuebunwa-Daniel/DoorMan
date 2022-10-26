@@ -8,14 +8,20 @@
     <link rel="icon" href="../assets/DoorMan-logo.jpg">
     <link rel="stylesheet" href="/assets/css/land.css">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet"> -->
+
 
 <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/scrollreveal"></script>
 
 
 </head>
@@ -31,12 +37,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
+      
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Login
@@ -61,148 +62,200 @@
       </div>
     </div>
   </nav>
+
   
+ 
   <div class="container">
+      <div id="fancy">
+          <div class="card" id="card">
+            <div class="card-body">
+              <p class="card-text">DoorMan is one of the best delivery services avaliable in Nigeria, over 150+ riders available for your delivery services.
+                with DoorMan, you can send packages, foods, cakes, etc at from your comfort at a click of your finger. Thank you for choosing us, we promise not to disappoint you .</p>
+            </div>
+          </div>
+          
+            <img id="fineDoorman" class="img-fluid" src="assets/img/fineDoorman.jpg">
+          </div>
+        </div>
+     
     
-    <div class="fancy">
- <div class="card" id="card">
-    <div class="card-body">
-      <p class="card-text">DoorMan is one of the best delivery services avaliable in Nigeria, over 150+ riders available for your delivery services.
-        with DoorMan, you can send packages, foods, cakes, etc at from your comfort at a click of your finger. Thank you for choosing us, we promise not to disappoint you .</p>
-    </div>
+    <div class="card"  id="u">
+      <div class="card-body" id ="us">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card" id="ur" >
+            <div class="card-body"  >
+          <p class="card-text" id="book"> BOOK AND SEND <br> PACKAGE WITH EASE </p>
+          </div>
+          </div>
+        </div>
+
+          <div class="col">
+            <div class="card" id="ur">
+              <div class="card-body">
+            <p class="card-text"> FAST AND QUICK <br>PICKUP SERVICE </p>
+        
+            </div>
+            </div>
+          </div>
+
+            <div class="col">
+              <div class="card" id="ur">
+                <div class="card-body">
+              <img  id ="app" src="assets/img/app.png" alt="">
+          
+              </div>
+              </div>
+            </div>
+         
+          </div>
+          </div>
+ </div>
   </div>
 
-  <img id="fineDoorman" class="img-fluid" src="assets/img/fineDoorman.jpg">
-</div>
-  
-
-  <div class="card"  id="u">
-    <div class="card-body" id ="us">
-
-      <div class="card" id="ur" >
-        <div class="card-body"  >
-      <p class="card-text" id="book"> BOOK AND SEND <br> PACKAGE <br>WITH EASE </p>
-      </div>
-      </div>
-
-      <div class="card" id="ur">
-        <div class="card-body">
-      <p class="card-text"> FAST AND <br>QUICK PICKUP <br>SERVICE </p>
-  
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-<div class="products">
+ <div id="products"  class ="container">
   <p id="what">What we do</p>
   <p id="range">DoorMan offers other range of services</p>
-</div>
+</div> 
+
 
 <div class="services">
-  <div class="card" id="services">
-    <div class="card-body">
-       <h4 class="title">Inter state delivery</h4>
-       <h6 class="sub-title">send packages and parcel outside your state</h6>
-       <img src ="assets/img/delivery-van.jpg" class="img-fluid"> <br>
-       <a  id="order" href="#" class="btn btn-primary">Place your order</a>
-       <p id="stock">Out of stock</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Inter state delivery</h4>
+           <h6 class="sub-title">send packages and parcel outside your state</h6>
+           <img id="delivery-van" src ="assets/img/delivery-van.jpg" class="img-fluid"> <br>
+           <a  id="order" href="#" class="btn btn-primary">Place your order</a>
+           <p id="stock">Out of stock</p>
+    
+    
+      </div>
+    </div>
+    </div>
 
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Logistic</h4>
+           <h6 class="sub-title">Send packages and parcels</h6>
+           <img id="ridemap"src ="assets/img/ridemap.png" class="img-fluid"> <br>
+           <a  id="goods" href="/layout" class="btn btn-primary">Send your Goods</a>
+           <!-- <p id="stock">Out of stock</p> -->
+      
+      
+      </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Food delivery</h4>
+           <h6 class="sub-title">Order food from your favourite Restaurants and have it delivered at your door step</h6>
+           <img id ="delivery-pic"src ="assets/img/delivery-pic.jpg" class="img-fluid"> <br><br>
+           <a  id="order" href="#" class="btn btn-primary">Place your order</a>
+           <p id="stock">Not yet available</p>
+      
+      
+      </div>
+      </div>
+    </div>
 
   </div>
-</div>
 
-<div class="card" id="services">
-  <div class="card-body">
-     <h4 class="title">Logistic</h4>
-     <h6 class="sub-title">Send packages and parcels</h6>
-     <img id="ridemap"src ="assets/img/ridemap.png" class="img-fluid"> <br>
-     <a  id="goods" href="/layout" class="btn btn-primary">Send your Goods</a>
-     <!-- <p id="stock">Out of stock</p> -->
-
-
+  
 </div>
 </div>
 
-<div class="card" id="services">
-  <div class="card-body">
-     <h4 class="title">Food delivery</h4>
-     <h6 class="sub-title">Order food from your favourite Restaurants and have it delivered at your door step</h6>
-     <img id ="delivery-pic"src ="assets/img/delivery-pic.jpg" class="img-fluid"> <br><br>
-     <a  id="order" href="#" class="btn btn-primary">Place your order</a>
-     <p id="stock">Not yet available</p>
-
-
-</div>
-</div>
-
-</div>
-<div class="products">
+<div id="products" class ="container">
   <h2>What we sell</h2>
   <p>Place your order and get it delivered to you</p>
 </div>
-</div>
 
 <div class="services">
-  <div class="card" id="services">
-    <div class="card-body">
-       <h4 class="title">Bike sales</h4>
-       <h6 class="sub-title">purchase brand new Qlink bikes</h6>
-       <img src ="assets/img/bike.png" id="bike"class="img-fluid"> <br>
-       <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
-       <p id="stock">Out of stock</p>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Bike sales</h4>
+           <h6 class="sub-title">purchase brand new Qlink bikes</h6>
+           <img src ="assets/img/bike.png" id="bike"class="img-fluid"> <br>
+           <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
+           <p id="stock">Out of stock</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Helmet sales</h4>
+           <h6 class="sub-title">Purchase brand new super protective helmets</h6>
+           <img src ="assets/img/helment.jpg" id="hel"class="img-fluid"> <br>
+           <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
+           <p id="stock">Out of stock</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card" id="services">
+        <div class="card-body">
+           <h4 class="title">Bike Glooves  sales</h4>
+           <h6 class="sub-title">Purchase brand new super protective hand glooves</h6>
+           <img id="glovePic" src ="assets/img/gloves.jpg" class="img-fluid"> <br>
+           <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
+           <p id="stock">Out of stock</p>
+      </div>
+      </div>
+    </div>
+
+    </div>
+    </div> 
 </div>
 
-<div class="card" id="services">
-  <div class="card-body">
-     <h4 class="title">Helmet sales</h4>
-     <h6 class="sub-title">Purchase brand new super protective helmets</h6>
-     <img src ="assets/img/helment.jpg" id="hel"class="img-fluid"> <br>
-     <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
-     <p id="stock">Out of stock</p>
-</div>
-</div>
-
-<div class="card" id="services">
-  <div class="card-body">
-     <h4 class="title">Bike Glooves  sales</h4>
-     <h6 class="sub-title">Purchase brand new super protective hand glooves</h6>
-     <img src ="assets/img/gloves.jpg" class="img-fluid"> <br>
-     <a  id="glove" href="#" class="btn btn-primary">Place your order</a>
-     <p id="stock">Out of stock</p>
-
-
-</div>
-</div>
-
-</div>
-
-<div class="work">
-
+<div id="work">
+  <div class="container">
+    <div id="work">
+  <div class="workInner">
   <div class="card" id="remote">
     <div class="card-body">
-      <div class="try">
-        <h4>Become a DoorMan <br> customer service <br> agent</h4>
-        <h6> Work from anywhere</h6>
+      <img id="customer-service" class="img-fluid" src="assets/img/customer-service.jpg">
       </div>
-        <img id="customer-service"src="assets/img/customer-service.jpg">
-        <a id="apply" href="#" class="btn btn-primary">Apply</a>
-    </div>
-  </div>
-
-  <div class="card" id="remote">
-    <div class="card-body">
-      <div class="try">
-        <h4>Become a DoorMan Logistics Agent</h4>
-        <h6>Pickup collections & Delivery</h6>
       </div>
-        <img id="customer-service"src="assets/img/rider.jpg">
-        <a id="apply" href="#" class="btn btn-primary">Apply</a>
-    </div>
-  </div>
 
+      <div id="remote2">
+        <div >
+          <h4 id="become" class="text-center">Become a DoorMan <br> customer service <br> agent</h4>
+        <h6 id="from" class="text-center"> Work from anywhere</h6>
+        <a id="apply" href="#" class="btn btn-primary">Apply</a>
+          </div>
+          </div>
+        </div>
+  
+  <div class="workInner2">
+    <div class="card" id="remote">
+      <div class="card-body">
+        <img id="Pickup" class="img-fluid" src="assets/img/rider.png">
+        </div>
+        </div>
+
+        <div id="remote2">
+          <div >
+            <h4 id="become" class="text-sm-start">Become a DoorMan Logistics Agent</h4>
+            <h6 id="from" class="text-sm-start">Pickup collections & Delivery</h6>
+          <a id="apply" href="#" class="btn btn-primary">Apply</a>
+            </div>
+            </div>
+
+  </div>
+</div>
+</div>
 </div>
 
 <hr>
@@ -265,61 +318,9 @@ DoorMan is one of the Nigeria largest delivery organisation, that have been in e
 
   </div>
 </div>
-
-
-
-
-
-
-  
-       
-
-      
-      <!-- <div class="food">
-        <p><span> You are hungry? </span>you're in<br> the right place, order what to eat from your favourite Restaurants and pay on delivery</p>
-
-      </div>
-
-      <div class="bg-image">
-        <img class="bg" src="../assets/img/doorMan.jpeg" alt="">
-      </div>
-  
-        <p class="relax">Just relax at Home,<br>
-        your Goods are safe with us<br> and we will take care of you
-        </p> -->
-
-        <!-- <div class="footer">
-          <div id="fo">
-            <i class="fa-solid fa-hourglass-start"></i>
-            <h5 id="about">Fast delivery in 1 hour 
-            with our riders</h5>
-            </div>
-
-            <div id="fo">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <h5 id="about">very easy to order with phone or web</h5>
           </div>
 
-          <div id="fo">
-            <i class="fa-solid fa-earth-americas"></i>
-            <h5 id="about">wide coverage map around the world</h5>
-          </div> -->
-
-        
-
-
-
-          </div>
-
-        </div>
-      
-    
-    
-  
-    
-    </div>
-  </div>
-
-      
+         
+<script src="assets/script/slide.js"></script>
 </body>
 </html>

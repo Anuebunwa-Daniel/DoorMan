@@ -75,6 +75,7 @@ const customers_details = await customerSchema.find()
 })
 
 
+
 // Registering a new user
 app.post('/registration', async(req,res)=>{
     // console.log(req.body)

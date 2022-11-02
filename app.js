@@ -41,42 +41,60 @@ app.use('/script', express.static('script'))
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(cookieParser())
 
 
 
 
 
 app.get('/', (req, res)=>{
-    res.render('landing')
+    res.render('landing',{
+        title: 'DoorMan- Home page'
+    })
 })
 app.get('/login', (req, res)=>{
-    res.render('login')
+    res.render('login',{
+        title: 'DoorMan-customer registration'
+    })
 })
 
 app.get('/registration', (req, res)=>{
-    res.render('registration')
+    res.render('registration',{
+        title: 'DoorMan-customer registration'
+    })
 })
 app.get('/ridersReg', (req, res)=>{
-    res.render('ridersReg')
+    res.render('ridersReg',{
+        title: 'DoorMan-rider registration'
+    })
 })
 app.get('/bike', (req, res)=>{
-    res.render('bike')
+    res.render('bike', {
+        title: 'DoorMan-bike registration'
+    })
 })
 app.get('/ridersLogin', (req,res)=>{
-    res.render('ridersLogin')
+    res.render('ridersLogin',{
+        title: 'DoorMan-rider login'
+    })
 })
 
 app.get('/rider-page', (req,res)=>{
-    res.render('rider-page')
-})
-app.get('/customer-page', async(req,res)=>{
-    const customers_details = await customerSchema.find()
-    res.render('customer-page' , {posts:customers_details})
+    res.render('rider-page', {
+        title: "DoorMan-rider page"
+    })
 })
 
-
-
-
+app.get('/customer-page', protectRoute, async(req,res)=>{
+    const user = req.user.user.number
+        const customers_details = await customerSchema.find()
+       const customer_name = await  customerSchema.findOne({Number:user})
+        res.render('customer-page' ,{
+            posts:customers_details, 
+            name: customer_name.firstname,
+            title: 'DoorMan-customer page'
+        })
+        })
 
 // Registering a new user
 app.post('/registration', async(req,res)=>{
@@ -334,7 +352,7 @@ const customer = customerSchema.findOne({Number})
                 res.cookie('token', token, {
                     httpOnly:true
                 })
-                res.redirect( '/customer-page', {name: firstName} )
+                res.redirect( '/customer-page')
             }
             
             else{
@@ -351,6 +369,21 @@ const customer = customerSchema.findOne({Number})
     })
 
 })
+
+function protectRoute(req, res, next){
+    const token = req.cookies.token
+    try{
+        const user = jwt.verify(token, 'DoorMan')
+
+        req.user = user
+        // console.log(req.user)
+        next()
+    }
+    catch(err){
+        res.clearCookie('token')
+        return res.redirect('')
+    }
+}
 
 //login a rider
 app.post ('/ridersLogin',(req,res)=>{

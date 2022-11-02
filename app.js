@@ -56,33 +56,25 @@ app.get('/login', (req, res)=>{
 app.get('/registration', (req, res)=>{
     res.render('registration')
 })
-app.get('/index', (req, res)=>{
-    res.render('index')
-})
 app.get('/ridersReg', (req, res)=>{
     res.render('ridersReg')
 })
 app.get('/bike', (req, res)=>{
     res.render('bike')
 })
-app.get('/layout', (req, res)=>{
-    res.render('layout')
-})
 app.get('/ridersLogin', (req,res)=>{
     res.render('ridersLogin')
 })
-app.get('/riderLayout', async(req, res)=>{
-const customers_details = await customerSchema.find()
-    res.render('riderLayout', {posts:customers_details})
+
+app.get('/rider-page', (req,res)=>{
+    res.render('rider-page')
+})
+app.get('/customer-page', async(req,res)=>{
+    const customers_details = await customerSchema.find()
+    res.render('customer-page' , {posts:customers_details})
 })
 
-app.get('/riderLayout', (req,res)=>{
-    res.render('riderLayout')
-})
-app.get('/new', async(req,res)=>{
-    const customers_details = await customerSchema.find()
-    res.render('new' , {posts:customers_details})
-})
+
 
 
 
@@ -342,7 +334,7 @@ const customer = customerSchema.findOne({Number})
                 res.cookie('token', token, {
                     httpOnly:true
                 })
-                res.redirect('/layout')
+                res.redirect( '/customer-page', {name: firstName} )
             }
             
             else{
@@ -391,7 +383,7 @@ app.post ('/ridersLogin',(req,res)=>{
                 res.cookie('token', token, {
                     httpOnly:true
                 })
-                res.redirect('/riderLayout', {use: firstname})
+                res.redirect('/rider-page' )
             }
             
             else{

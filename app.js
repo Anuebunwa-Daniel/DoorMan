@@ -10,6 +10,7 @@ const customerSchema =require('./customerSchema')
 const {cloudinary} =require('./utis/cloudinary')
 const multer = require('multer')
 const upload = require('./utis/multer')
+// const ejsLayout =require('express-ejs-layouts')
 
 const path = require('path')
 const riderSchema = require('./riderSchema')
@@ -36,6 +37,7 @@ mongoose.connect (mongodb)
 app.set('view engine', 'ejs')
 app.use('/assets', express.static('assets'))
 app.use('/script', express.static('script'))
+// app.use (ejsLayout)
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -72,6 +74,14 @@ app.get('/ridersLogin', (req,res)=>{
 app.get('/riderLayout', async(req, res)=>{
 const customers_details = await customerSchema.find()
     res.render('riderLayout', {posts:customers_details})
+})
+
+app.get('/riderLayout', (req,res)=>{
+    res.render('riderLayout')
+})
+app.get('/new', async(req,res)=>{
+    const customers_details = await customerSchema.find()
+    res.render('new' , {posts:customers_details})
 })
 
 
@@ -356,6 +366,7 @@ app.post ('/ridersLogin',(req,res)=>{
     const Number = loginInfo.Number
     const password =loginInfo.password
     const firstName =loginInfo.firstName
+    
     console.log(Number)
     
    const user = riderSchema.findOne({Number})
@@ -380,7 +391,7 @@ app.post ('/ridersLogin',(req,res)=>{
                 res.cookie('token', token, {
                     httpOnly:true
                 })
-                res.redirect('/riderLayout')
+                res.redirect('/riderLayout', {use: firstname})
             }
             
             else{

@@ -1,0 +1,92 @@
+#menu{
+    color: black !important;
+    /* border: 1px solid black ; */
+    width: 200px;
+    background-color: brown;
+}
+.sidebar{
+    color:gold!important;
+    
+}
+#menu-Label{
+    font-size: 30px;
+    font-family: 'Satoshi';
+    color:gold;
+}
+.nav-link{
+    color: gold;
+    font-size: 20px;
+    font-family: 'roboto';
+
+}
+.nav-link:hover, .nav-link:active{
+    text-decoration: underline;
+    color: rgb(217, 189, 34);
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 10fr 4fr;
+    
+}
+#main-top{
+    color:brown !important;
+    font-size: 50px !important;
+    font-family:'poppins';
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+#top{
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
+    font-family: 'curcive';
+    color: black;
+  }
+  #content{
+    background-color: rgb(225, 222, 222);
+  }
+  .card{
+    color: rgb(158, 156, 156);
+      font-family: 'roboto';
+  }
+  .card-body{
+    font-size: 20px;
+    font-family: 'roboto';
+  }
+  form{
+    color: black;
+    font-size: 20px;
+    font-family: 'roboto';
+
+  }
+ 
+  #map{
+    width: 100%;
+    height: 400px;
+    
+  }
+  #customer_details{
+    display:none;
+}
+#output{
+    color: black;
+    font-family: 'Satoshi';
+}
+
+@media screen and (min-width:720px){
+    #content{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    #head{
+        background-color: ghostwhite;
+    }
+    #details{
+        margin-right: 20px;
+        height: 300px;
+    }
+}
+  

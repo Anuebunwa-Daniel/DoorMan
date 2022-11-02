@@ -100,9 +100,6 @@ function get_location() {
 
       const distance = document.getElementById('distance')
       distance.innerHTML = "Distances: " +  response.routes[0].legs[0].distance.text
-
-      const customerDetails =document.getElementById('customer_details')
-      customerDetails.style.display ="block"
       
        
       }

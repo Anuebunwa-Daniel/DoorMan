@@ -51,6 +51,12 @@ button{
     margin-bottom: 10px;
     font-size: 20px !important;
 }
+button:hover{
+    background-color:#e7ac92 ;
+    color:#fff;
+    outline: 0;
+    transition: background-color 1s ease-out;
+}
 
 
 #forget{

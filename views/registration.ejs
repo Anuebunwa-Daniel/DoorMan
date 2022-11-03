@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registation Page</title>
+    <title><%= title%> </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
     <link rel="icon" type="image/x-icon" href="assets/img/DoorMan-logo.jpg">
-    <link rel="stylesheet" href="/assets/css/reg.css">
+    <link rel="stylesheet" href="../assets/css/reg.css">
 
     <script src="https://kit.fontawesome.com/0c6ddb1ebe.js" crossorigin="anonymous"></script>
 
@@ -22,79 +25,82 @@
 </head>
 <body>
 
-    <div class="animate__fadeInDown">
-    <div id="container" class="animate__fadeInTopLeft">
+    <div class="wrapper animated bounceInLeft">
+    <div class="container">
        
-        <div class="header">
-        <img src="../assets/img/DoorMan-logo.jpg" class="img">
-        <h1 class="animate__fadeInDown">Door Man</h1>
-    </div> 
-    <br>
+        <div class="logo">
+            <img src="../assets/img/DoorMan-logo.jpg" alt="">
+        </div>
 
-   <p>Welcome to the Door Man registration page, thank you for choosing  Door Man</p>
+  
 
-   <div class="animate__fadeInDownBig">
-    <h1>sign up <span>it's free</span>
-        <br><P>(customer's registration)</P>
-    </h1>
+    <form  method="post" action="/registration" id="form" class="img.fluid">
+        <p>Welcome to the Door Man registration page, thank you for choosing  Door Man</p>
 
-    <form  method="post" action="/registration" id="form">
+        <h1>sign up <span>it's free</span>
+            <br><P>(customer's registration)</P>
+        </h1>
 
-        <label for="First Name"><i class="fa-solid fa-file-signature"></i></label>
-
+        <div class="form">
+     <p>
+        <label for="First Name">First Name:</i></label>
         <input type="text" id="first" name="firstname" placeholder="First Name" required >
-        <br>
+    </p>
 
-        <label for="Last Name"><i class="fa-solid fa-file-signature"></i></label>
+    <p>
+        <label for="Last Name">Last Name:</label>
         <input type="text" id="last" placeholder="Last Name" name="lastname" required>
-        <br>
-
-        <label for="phone number"><i class="fa-solid fa-file-signature"></i></label>
+    </p>
+    <p>
+        <label for="phone number">Phone Number</i></label>
         <input type="text" id="last" placeholder="Phone Number" name="Number" required>
-        <br>
-
-        <label for="Email"><i class="fa-solid fa-envelope"></i></label>
+    </p>  
+    <p>
+        <label for="Email">Email:</i></label>
         <input type="email" id="email" placeholder="Enter your Email" name="email" required>
-
-        <br>
-        <label for="password"><i class="fa-solid fa-lock"></i></label>
+    </p>
+    <p class="p">
+        <label for="password">Password:</label>
         <input type="password" id="password" placeholder=" Password" name="password"  onkeyup="pass()" required>
         <p id="passLength"></p>
-        <br>
-
-        <label for="confirm"><i class="fa-solid fa-lock"></i></label>
+    
+    </p>
+    <p class="p">
+        <label for="confirm">Confirm password:</label>
         <input type="password" onkeyup="check()" id="confirm" placeholder=" Comfirm Password" name="conpassword" required>
 
         <p id="message"></p>
+    </p>
 
-        <br>
-
-        <label for="country"><i class="fa-solid fa-earth-africa"></i></label>
+</div>
+    <div>
+    <p>
+        <label for="country"><label>
         <select name="country" id="country">
             <option value="options">Choose your Country</option>
             <option value="Nigeria" name="nigeria"> Nigeria</option>
-
-        
-                <input type="checkbox" id="terms">
-                <label> I have read and accepted <a href="#">Terms and Conditions</a></label>
-            
-
-
-            <input   type="submit" value="Submit" id="submit" disabled>
-            
-            
         </select>
+
+    </p>
+
+        <p>
+            <label>Accepted our <a href="#">Terms and Conditions</a></label>
+                <input type="checkbox" id="terms">
+        </p>
+
+      <button  type="submit" value="Submit" id="submit" disabled>Register</button>
+            <!-- <input   type="submit" value="Submit" id="submit" disabled> -->
+       
+    </div>        
     </form>
    </div>
 
-    </div>
+    
 </div>
 <script src="../assets/script/regconfig.js"></script>
-<script>
+
     
-
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </body>
 </html>

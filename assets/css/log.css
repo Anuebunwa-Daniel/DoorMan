@@ -1,114 +1,121 @@
 *{
     box-sizing: border-box; 
 }
- .wrapper{
-            box-shadow: 0 0 20px 0 black;
-            height: 550px;
-        } 
 .container{
-    /* border: 1px solid black; */
+    margin-top: 50px;
 }
-
-img{
+ img{
     height: 200px;
     width: 100%;
-    margin-top: 0px;
-
-    top: 0%;
 }
 .login_form{
     display: block;
     margin:0 auto;
-    width: 90%;
+    width: 100%;
     text-align: center;
-    margin-top: 10px;
     background-color:white;
-    
+    font-family: 'Helvetica';  
 }
+
 h2{
     color: brown;
-    margin-top: -20px;
 }
 p{
     color:gray;
 }
+form{
+    background-color: rgb(195, 191, 191);
+    padding-bottom: 40px;
+}
 #password{
-    width: 100%;
+    width: 80% !important;
     height: 30px;
-    margin: 10px 0px;
+    margin-top: 20px;
     border-radius: 5px;
     background-color: beige;
     border: 0px;
 
 }
+i{
+    margin-top: 20px; 
+}
+
 button{
-    height: 25px;
+    height: 35px;
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif !important;
     background-color: brown;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px !important;
     margin-top: 20px;
     margin-bottom: 10px;
-   
-    
-
+    font-size: 20px !important;
 }
 
 
 #forget{
-    text-decoration: none;
-    margin-left: 20px;
-    color:black;
+    text-decoration:underline ;
+   font-size: 15px;
+    color:gray;
 }
 #forget:hover{
-    color: gray;
+    color:brown;
+    text-decoration:none;
+    font-size: 16px;
 }
 
-.terms{
-    margin-top: 10px;
-    margin-left: 30px;
+#acct{
+    text-decoration:underline;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 15px;
+    
+}
+#acct:hover{
+    color:brown;
+    text-decoration:none;
+    font-size: 16px;
 }
 
 @media screen and (min-width:700px){
-      .wrapper{
-        display: block;
-        margin:0 auto;
-            box-shadow: 0 0 20px 0 black;
-            height: 500px;
-            width: 90%;
     
-        } 
         .container{
-
-            width: 90%;
-            height: auto;
-            
+            display:flex; 
+            margin-top: 50px;   
         }
     img{
-        width: 50%;
-        margin-left:10px;
-        margin-top:40px;
+        width: 100%;
         height:400Px;
-
     }
     .login_form{
-        margin-left: 420px;
-        margin-top: -400px;
         background-color:white;
-        width: 45%;
+        width: 100%;
         height:400Px;
-        border: 1px solid brown;
-        position: absolute;
+    }
+    form{
+        margin-left: 10%;
+        background-color: rgb(195, 191, 191);
+    }
+    .brand{
+        margin-top: -40px;
+    
     }
     h2{
         color: brown;
-
+        margin-left: 10px;
+        
     }
     p{
         margin-left: 30px;
         color:gray;
     }
    #password{
-    width: 70%;
+    width: 100%;
+    margin-top: 20px;
+  
    }
+i{
+    margin-top: 20px;
+}
 }
 

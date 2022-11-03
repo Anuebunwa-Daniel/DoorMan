@@ -79,9 +79,14 @@ app.get('/ridersLogin', (req,res)=>{
     })
 })
 
-app.get('/rider-page', (req,res)=>{
+app.get('/rider-page', protectRoute1, async(req,res)=>{
+    const user = req.user.user.number
+    const customers_details = await riderSchema.find()
+    const customer_name = await  riderSchema.findOne({Number:user})
     res.render('rider-page', {
-        title: "DoorMan-rider page"
+        posts:customers_details, 
+        title: "DoorMan-rider page",
+        name: customer_name.firstname
     })
 })
 
@@ -95,6 +100,11 @@ app.get('/customer-page', protectRoute, async(req,res)=>{
             title: 'DoorMan-customer page'
         })
         })
+
+app.get('/logout', (req, res)=>{
+   res.cookie('token', '',{maxAge: 1})
+   res.redirect('/')
+})
 
 // Registering a new user
 app.post('/registration', async(req,res)=>{
@@ -381,7 +391,7 @@ function protectRoute(req, res, next){
     }
     catch(err){
         res.clearCookie('token')
-        return res.redirect('')
+        return res.redirect('/login')
     }
 }
 
@@ -433,6 +443,21 @@ app.post ('/ridersLogin',(req,res)=>{
     })
 
 })
+
+function protectRoute1(req, res, next){
+    const token = req.cookies.token
+    try{
+        const user = jwt.verify(token, 'DoorMan')
+
+        req.user = user
+        // console.log(req.user)
+        next()
+    }
+    catch(err){
+        res.clearCookie('token')
+        return res.redirect('/ridersLogin')
+    }
+}
 
 
 

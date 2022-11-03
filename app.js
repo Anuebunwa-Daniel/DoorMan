@@ -54,7 +54,7 @@ app.get('/', (req, res)=>{
 })
 app.get('/login', (req, res)=>{
     res.render('login',{
-        title: 'DoorMan-customer registration'
+        title: 'DoorMan-customer login'
     })
 })
 
